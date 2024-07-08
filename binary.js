@@ -32,6 +32,20 @@ function bubbleSort(array) {
 
 function binarySearch(array, x) {
   // return a Boolean: true if x is in array, and false otherwise
+  let n = array.length;
+  let R = n;
+  let L = 0;
+  while (R >= L) {
+    let M = Math.floor((L + R) / 2);
+    if (array[M] === x) {
+      return true;
+    } else if (array[M] > x) {
+      R = M - 1;
+    } else {
+      L = M + 1;
+    }
+  }
+  return false;
 }
 
 var arr = genRandomArray(14);
